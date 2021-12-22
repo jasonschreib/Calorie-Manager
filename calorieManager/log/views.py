@@ -11,3 +11,7 @@ from django.contrib.auth.models import User
 #splash page view - take in request and render the splash.html template
 def splash(request):
   return render(request, 'splash.html', {})
+
+#accounts page view - to signup or login
+def accounts(request):
+  return render(request, 'accounts.html', {})
