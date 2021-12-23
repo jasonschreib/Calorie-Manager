@@ -7,12 +7,19 @@ from django.contrib.auth.models import User
 from log.models import Entry
 #import time to fulfill first-party package req.
 import time
+#import faker
+from faker import Faker
+fake = Faker()
 
 # Create your views here.
 
 #splash page view - take in request and render the splash.html template
 def splash(request):
-  return render(request, 'splash.html', {})
+  #create a random name for requirements
+  name = fake.name()
+  print('NAME', name)
+  sentence = fake.sentence()
+  return render(request, 'splash.html', {'randomName': name, 'randomSentence': sentence})
 
 
 #accounts page view - to signup or login
@@ -42,7 +49,7 @@ def homepage(request):
   # entries = Entry.objects.filter(author=request.user)
   entries = Entry.objects.all()
   print('entries', entries)
-  return render(request, 'homepage.html', {'entries': entries, 'time': currtime})
+  return render(request, 'homepage.html', {'entries': entries, 'currtime': currtime})
 
 
 #sign up page view - will always redirect to either accounts (if can't go through) or home
@@ -86,6 +93,24 @@ def log_in(request):
 
 #edit page view - page to edit a specific entry
 def edit(request):
+  print('REq', request.GET)
+  #if the request is a POST request - meaning new log
+  if (request.method == 'POST'):
+    #get the entry to update - currently running into a bug with the id
+    entry = Entry.objects.get(id=request.GET['id'])
+    print('after')
+    #get the updated info
+    date = request.POST['date']
+    breakfast = request.POST['breakfast']
+    snackOne = request.POST['snackOne']
+    lunch = request.POST['lunch']
+    snackTwo = request.POST['snackTwo']
+    dinner = request.POST['dinner']
+    caloriesBurned = request.POST['caloriesBurned']
+    #save the updates
+    entry.save(date=date, breakfast=breakfast, snackOne=snackOne, lunch=lunch, snackTwo=snackTwo, dinner=dinner, caloriesBurned=caloriesBurned)
+    #redirect back to the homepage
+    return redirect('homepage')
   return render(request, 'edit.html', {})
 
 
