@@ -7,7 +7,7 @@ The moment you have been waiting for: the final project. Create whatever you wan
 # Added Features
 One class definition (with at least two magic methods)
 Two first-party packages: time and Faker
-Two third-party packages: Django and numpy (both django and numpy are already available frameworks)
+Two third-party packages: Django, numpy (both django and numpy are already available frameworks), and emoji
 In-line documentation (i.e. comments in code)
 README.md (installation instructions, code structure)
 

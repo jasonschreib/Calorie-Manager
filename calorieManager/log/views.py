@@ -19,7 +19,9 @@ def splash(request):
   name = fake.name()
   print('NAME', name)
   sentence = fake.sentence()
-  return render(request, 'splash.html', {'randomName': name, 'randomSentence': sentence})
+  from emoji import emojize
+  emoji = emojize(":thumbs_up:")
+  return render(request, 'splash.html', {'randomName': name, 'randomSentence': sentence, 'emoji': emoji})
 
 
 #accounts page view - to signup or login
