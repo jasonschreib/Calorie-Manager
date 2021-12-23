@@ -6,8 +6,8 @@ The moment you have been waiting for: the final project. Create whatever you wan
 
 # Added Features
 One class definition (with at least two magic methods)
-Two first-party packages:
-Two third-party packages: Django and
+Two first-party packages: time
+Two third-party packages: Django and numpy (both django and numpy are already available frameworks)
 In-line documentation (i.e. comments in code)
 README.md (installation instructions, code structure)
 

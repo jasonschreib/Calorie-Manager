@@ -13,7 +13,7 @@
   <body style="margin-left: 2rem; margin-top: 1rem">
     <div>
       <a class="btn btn-primary" href="/">Go Back</a>
-      <form method="POST" action="/signup">
+      <form method="POST" action="signup">
         {% csrf_token %}
         <p>Create Account</p>
         <input name="username" placeholder="username" />
@@ -25,7 +25,7 @@
     </form>
     </div>
     <div>
-      <form method="POST" action="/login">
+      <form method="POST" action="log_in">
         {% csrf_token %}
         <p style="margin-top: 2rem">Login Existing User</p>
         <input name="username" placeholder="username" />
