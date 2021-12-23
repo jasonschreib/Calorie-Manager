@@ -82,3 +82,25 @@ def log_in(request):
       login(request, user)
       #redirect to homepage
       return redirect('/homepage')
+
+
+#edit page view - page to edit a specific entry
+def edit(request):
+  return render(request, 'edit.html', {})
+
+
+#delete page view - redirects to homepage after deleting a tweet
+def delete(request):
+  #retrieve the entry to delete
+  entry = Entry.objects.get(id=request.GET['id'])
+  #delete the entry
+  entry.delete()
+  print('hit the delete route')
+  #redirect back to the homepage
+  return redirect('homepage')
+
+
+#logout page view - will logout user and redirect to the accounts page
+def logout_view(request):
+  logout(request)
+  return redirect('accounts')

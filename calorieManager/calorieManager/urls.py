@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from log.views import splash, accounts, homepage, signup, log_in
-# delete, edit, logout_view
+from log.views import splash, accounts, homepage, signup, log_in, delete, edit, logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +23,8 @@ urlpatterns = [
     path('accounts', accounts, name='accounts'),
     path('homepage', homepage, name='homepage'),
     path('signup', signup, name='signup'),
-    path('log_in', log_in, name='log_in')
+    path('log_in', log_in, name='log_in'),
+    path('delete', delete, name='delete'),
+    path('edit', edit, name='edit'),
+    path('logout', logout_view, name='logout')
 ]
