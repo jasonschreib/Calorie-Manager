@@ -18,6 +18,9 @@
         {% csrf_token %}
         <p style="margin-top: 2rem">Make a new log</p>
         <div>
+          <input type="date" name="date" placeholder="today's date" />
+        </div>
+        <div>
           <input type="number" name="breakfast" placeholder="calories for breakfast" />
         </div>
         <div>
@@ -47,8 +50,9 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-body">
-              <p>{{entry.timestamp}}</p>
-              Created by {{entry.creator}}
+              <p>Last edited: {{entry.timestamp}}</p>
+              <!-- Created by {{entry.creator}} -->
+              <p>Date of creation: {{entry.date}}</p>
               <p>Breakfast: {{entry.breakfast}}</p>
               <p>First Snack of the day: {{entry.snackOne}}</p>
               <p>Lunch: {{entry.lunch}}</p>

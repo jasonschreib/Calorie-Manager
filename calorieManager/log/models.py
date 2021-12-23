@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 #model for entries
 class Entry(models.Model):
+  date = models.DateField(default='2001-01-01')
   breakfast = models.IntegerField()
   snackOne = models.IntegerField()
   lunch = models.IntegerField()

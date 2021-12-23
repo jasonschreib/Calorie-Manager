@@ -25,6 +25,7 @@ def homepage(request):
   if (request.method == 'POST'):
     print('REQ', request.POST)
     #retrieve data from the post req
+    date = request.POST['date']
     breakfast = request.POST['breakfast']
     snackOne = request.POST['snackOne']
     lunch = request.POST['lunch']
@@ -32,7 +33,7 @@ def homepage(request):
     dinner = request.POST['dinner']
     caloriesBurned = request.POST['caloriesBurned']
     #create a new entry for the database
-    Entry.objects.create(breakfast=breakfast, snackOne=snackOne, lunch=lunch, snackTwo=snackTwo, dinner=dinner, caloriesBurned=caloriesBurned)
+    Entry.objects.create(date=date, breakfast=breakfast, snackOne=snackOne, lunch=lunch, snackTwo=snackTwo, dinner=dinner, caloriesBurned=caloriesBurned)
   #retrieve all instances of the entries class for this user
   # entries = Entry.objects.filter(author=request.user)
   entries = Entry.objects.all()
