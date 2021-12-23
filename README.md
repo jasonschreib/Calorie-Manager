@@ -12,7 +12,11 @@ In-line documentation (i.e. comments in code)
 README.md (installation instructions, code structure)
 
 # Installation Instructions
+Installation: install time, Faker, Django, and emoji with pip
 How to run the server: Django must be installed Run the following command to create db --> python3 manage.py makemigrations Then --> python3 manage.py migrate Then the following to run the server --> python3 manage.py runserver
+
+# Code Structure
+Code is structured as a singular app in a project; in terms of structure of the app, it begins on a splash page, then goes to the accounts page, then the user homepage, and then an edit page for the entries
 
 # If I had more time I would have:
 
@@ -20,3 +24,4 @@ How to run the server: Django must be installed Run the following command to cre
 2. When editing an entry and submitting, there is a bug that appears
 My result is very much similar to Twitter clone, but I initially set out to do much more and ran into bugs along the way that I did not encounter with the Twitter clone. Much of my time was spent debugging, but I have fulfilled the basic requirements.
 2. Added a height/weight component to the log
+
